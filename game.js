@@ -15,7 +15,10 @@ $(".btn").click(function() {
   //4. Add the contents of the variable userChosenColour created in step 2 to the end of this new userClickedPattern
   userClickedPattern.push(userChosenColour);
 
-  //console.log(userClickedPattern);
+  console.log(userClickedPattern);
+
+  nextSequence();
+
 
 });
 
