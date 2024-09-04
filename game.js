@@ -27,6 +27,9 @@ $(".btn").click(function() {
   checkAnswer(userClickedPattern.length-1);
 });
 
+function gameoverTrigger () {
+  $("body").toggleClass("game-over")
+};
 
 //1. Create a new function called checkAnswer(), it should take one input with the name currentLevel
 function checkAnswer(currentLevel) {
@@ -49,8 +52,16 @@ function checkAnswer(currentLevel) {
     } else {
 
       console.log("wrong");
+      playSound("wrong");
 
-    }
+      $("body").addClass("game-over");
+      setTimeout(function () {
+        $("body").removeClass("game-over");
+      }, 200);
+
+      $("#level-title").text("Game Over, Press Any Key to Restart");
+
+    };
 
 }
 
